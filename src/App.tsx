@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import Item from './components/item/Item'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Container>
+        <Item
+          itemColor={'#030f0e'}
+          headerColor={'#b80b0b'}
+          textType="italic"
+          firstBtnType="see"
+          secondBtnType="save"
+        ></Item>
+        <Item
+          itemColor={'#3c5238'}
+          headerColor={'#0b42b8'}
+          textType="italic"
+          firstBtnType="see"
+          secondBtnType="save"
+        ></Item>
+        <Item
+          itemColor={'#a79c07'}
+          headerColor={'#4bb80b'}
+          textType="normal"
+          firstBtnType="see"
+          secondBtnType="save"
+        ></Item>
+      </Container>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+const Container = styled.div`
+  margin: 50px auto;
+  padding: 20px;
+  width: 1500px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`
